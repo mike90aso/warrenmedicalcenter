@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primary Care | Warren Medical Center — Dearborn, MI</title>
+  <meta name="description" content="Warren Medical Center provides compassionate primary care in Dearborn, MI. Same-day appointments, online scheduling, and most major insurance accepted. Call (313) 945-8210.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@600;700;800&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0274BE;
+      --blue-dark: #015a96;
+      --blue-light: #e8f4fc;
+      --red: #ed1a1f;
+      --dark: #222222;
+      --text: #444444;
+      --text-muted: #666666;
+      --gray-50: #f7f8fa;
+      --gray-100: #eef0f3;
+      --gray-200: #e2e5ea;
+      --gray-300: #d0d4da;
+      --white: #ffffff;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --max-width: 1140px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: var(--gray-100);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Raleway', sans-serif;
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--blue-dark);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Top bar */
+    .top-bar {
+      background: var(--dark);
+      color: var(--white);
+      font-size: 0.875rem;
+      padding: 0.6rem 0;
+    }
+
+    .top-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .top-bar a {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .top-bar a:hover {
+      color: #8ed1fc;
+    }
+
+    .top-bar__item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Header */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav a {
+      color: var(--text);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .nav a:hover,
+    .nav a.is-active {
+      color: var(--blue);
+    }
+
+    .hero-dot-note {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 6px;
+      border: 1px solid var(--gray-200);
+      max-width: 520px;
+    }
+
+    .hero-dot-note a {
+      font-weight: 600;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .logo:hover {
+      color: var(--dark);
+    }
+
+    .logo__mark {
+      width: 48px;
+      height: 48px;
+      background: var(--blue);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo__text {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .logo__text span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      color: var(--white);
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-red:hover {
+      background: #c91519;
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+
+    .btn-outline:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 50%, var(--blue-light) 100%);
+      padding: 4rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(2, 116, 190, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 2.85rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--dark);
+    }
+
+    .hero-feature svg {
+      flex-shrink: 0;
+      color: var(--blue);
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-200);
+    }
+
+    .hero-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid var(--blue);
+    }
+
+    .hours-list {
+      list-style: none;
+    }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+
+    .hours-list .day {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .hours-list .closed {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .hero-card-address {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--gray-200);
+      font-size: 0.95rem;
+    }
+
+    .hero-card-address strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Benefits */
+    .benefits {
+      padding: 4.5rem 0;
+      background: var(--gray-50);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .benefit-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--blue);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Expect / Insurance */
+    .expect {
+      padding: 4.5rem 0;
+      background: var(--gray-100);
+    }
+
+    .expect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .expect-content h2 {
+      font-size: clamp(1.75rem, 3vw, 2.1rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .expect-content > p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .check-list {
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      font-size: 0.98rem;
+    }
+
+    .check-list svg {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: var(--blue);
+    }
+
+    .expect-highlight {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border-left: 4px solid var(--red);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .expect-highlight h3 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--red);
+    }
+
+    .expect-highlight p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .expect-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .insurance-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .insurance-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .insurance-list svg {
+      flex-shrink: 0;
+      color: var(--blue);
+    }
+
+    /* Scheduler */
+    .scheduler {
+      padding: 4.5rem 0 5rem;
+      background: var(--gray-50);
+    }
+
+    .scheduler-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--gray-200);
+    }
+
+    .scheduler-box h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .scheduler-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .scheduler-iframe-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+    }
+
+    .scheduler-iframe-wrap iframe {
+      display: block;
+      width: 100%;
+      min-height: 800px;
+      border: none;
+    }
+
+    /* Location */
+    .location {
+      padding: 4.5rem 0;
+      background: var(--gray-100);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .location-info {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid var(--gray-200);
+    }
+
+    .location-info h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .location-detail {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .location-detail svg {
+      flex-shrink: 0;
+      color: var(--blue);
+      margin-top: 0.15rem;
+    }
+
+    .location-detail strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 0.15rem;
+    }
+
+    .location-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      min-height: 320px;
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: none;
+      display: block;
+    }
+
+    /* CTA band */
+    .cta-band {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      color: var(--white);
+      padding: 3.5rem 0;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      color: var(--white);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-band p {
+      font-size: 1.1rem;
+      opacity: 0.92;
+      margin-bottom: 1.75rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-band .btn-red {
+      font-size: 1.05rem;
+      padding: 0.9rem 2rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: #aaa;
+      padding: 2.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer a {
+      color: #ccc;
+    }
+
+    .footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-brand {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      color: var(--white);
+      font-size: 1.05rem;
+    }
+
+    .footer-brand span {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8ed1fc;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero .container,
+      .expect-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .header-cta .btn-outline {
+        display: none;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-features,
+      .insurance-list {
+        grid-template-columns: 1fr;
+      }
+
+      .top-bar .container {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar__item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>12940 W Warren Ave, Dearborn, MI 48126</span>
+      </div>
+      <div class="top-bar__item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:3139458210">(313) 945-8210</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Warren Medical Center home">
+        <div class="logo__mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="logo__text">
+          Warren Medical Center
+          <span>Primary Care</span>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html" class="is-active">Primary Care</a>
+        <a href="dot-physicals.html">DOT Physicals</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:3139458210" class="btn btn-outline">Call Now</a>
+        <a href="#schedule" class="btn btn-primary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">Accepting New Patients</span>
+        <h1>Compassionate <span>Primary Care</span> Close to Home</h1>
+        <p class="hero-lead">From annual physicals to same-day sick visits, Warren Medical Center delivers personalized, patient-first healthcare for you and your family in Dearborn.</p>
+        <div class="hero-actions">
+          <a href="#schedule" class="btn btn-primary">Schedule Online</a>
+          <a href="tel:3139458210" class="btn btn-red">Call (313) 945-8210</a>
+        </div>
+        <p class="hero-dot-note">We also offer FMCSA-certified DOT physicals for commercial drivers. <a href="dot-physicals.html">Book a DOT exam &rarr;</a></p>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Same-Day Appointments
+          </div>
+          <div class="hero-feature">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Friendly, Professional Staff
+          </div>
+          <div class="hero-feature">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Online Scheduling
+          </div>
+          <div class="hero-feature">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Most Insurance Accepted
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Office Hours</h2>
+        <ul class="hours-list">
+          <li><span class="day">Monday</span> <span>9 AM – 4 PM</span></li>
+          <li><span class="day">Tuesday</span> <span>9 AM – 4 PM</span></li>
+          <li><span class="day">Wednesday</span> <span>9 AM – 2 PM</span></li>
+          <li><span class="day">Thursday</span> <span>9 AM – 4 PM</span></li>
+          <li><span class="day">Friday</span> <span>9 AM – 4 PM</span></li>
+          <li><span class="day">Saturday</span> <span class="closed">Closed</span></li>
+          <li><span class="day">Sunday</span> <span class="closed">Closed</span></li>
+        </ul>
+        <div class="hero-card-address">
+          <strong>Warren Medical Center</strong>
+          12940 W Warren Ave<br>
+          Dearborn, MI 48126
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Patients Choose Us</h2>
+        <p>We make healthcare simple, accessible, and personal — so you can focus on feeling your best.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Same-Day Appointments</h3>
+          <p>Feeling unwell? We offer same-day visits when slots are available — no long waits for the care you need.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Friendly, Professional Staff</h3>
+          <p>Our caring team takes time to listen, explain your options, and make every visit comfortable and stress-free.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Online Scheduling</h3>
+          <p>Book your appointment online anytime — annual physicals, sick visits, follow-ups, and more in just a few clicks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="expect">
+    <div class="container">
+      <div class="expect-grid">
+        <div class="expect-content">
+          <h2>Primary Care Services</h2>
+          <p>Comprehensive medical care for adults and families — all under one roof.</p>
+          <ul class="check-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Annual physicals and wellness exams
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Same-day sick visits and urgent concerns
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Preventive screenings and vaccinations
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Chronic disease management (diabetes, hypertension, asthma)
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Medication management and refills
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Lab work and on-site diagnostics
+            </li>
+          </ul>
+        </div>
+        <div class="expect-highlight">
+          <h3>Insurance Accepted</h3>
+          <p>We work with most major insurance plans. Bring your insurance card to your first visit and our team will verify your coverage.</p>
+          <ul class="insurance-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Aetna
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Blue Cross Blue Shield
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Cigna
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority Health
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Blue Cross Blue Shield of Michigan
+            </li>
+          </ul>
+          <p style="margin-top: 1rem;">Questions about coverage? Call <a href="tel:3139458210"><strong>(313) 945-8210</strong></a> and we'll help you verify your benefits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scheduler" id="schedule">
+    <div class="container">
+      <div class="scheduler-box">
+        <h2>Schedule Your Appointment</h2>
+        <p class="scheduler-subtitle">Pick a time that works for you. Online booking takes just a few minutes.</p>
+        <div class="scheduler-iframe-wrap">
+          <iframe src="https://app.acuityscheduling.com/schedule.php?owner=24644698&owner=24644698&appointmentType=95586059" width="100%" height="800" frameborder="0" allow="payment" title="Schedule Appointment"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info">
+          <h2>Find Us</h2>
+          <div class="location-detail">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>Warren Medical Center</strong>
+              12940 W Warren Ave<br>
+              Dearborn, MI 48126
+            </div>
+          </div>
+          <div class="location-detail">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:3139458210">(313) 945-8210</a>
+            </div>
+          </div>
+          <div class="location-detail">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <strong>Office Hours</strong>
+              Mon, Tue, Thu, Fri: 9 AM – 4 PM<br>
+              Wednesday: 9 AM – 2 PM<br>
+              Saturday &amp; Sunday: Closed
+            </div>
+          </div>
+          <a href="#schedule" class="btn btn-primary" style="margin-top: 1rem;">Book Appointment</a>
+        </div>
+        <div class="location-map">
+          <iframe
+            src="https://maps.google.com/maps?q=12940+W+Warren+Ave,+Dearborn,+MI+48126&hl=en&z=15&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Warren Medical Center location map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to Schedule Your Visit?</h2>
+      <p>Same-day appointments available. Book online or call our friendly team — we're here to help you feel your best.</p>
+      <a href="tel:3139458210" class="btn btn-red">Call (313) 945-8210</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        Warren Medical Center
+        <span>Primary Care</span>
+      </div>
+      <p>12940 W Warren Ave, Dearborn, MI 48126 &nbsp;|&nbsp; <a href="tel:3139458210">(313) 945-8210</a></p>
+      <p><a href="index.html">Primary Care</a> &nbsp;|&nbsp; <a href="dot-physicals.html">DOT Physicals</a></p>
+      <p>&copy; 2026 Warren Medical Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+</body>
+</html>
