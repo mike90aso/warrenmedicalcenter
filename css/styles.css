@@ -334,24 +334,6 @@
       color: var(--blue);
     }
 
-    .hero-photo {
-      margin-top: 1.75rem;
-      max-width: 520px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--gray-200);
-      box-shadow: var(--shadow);
-      background: var(--white);
-    }
-
-    .hero-photo img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      object-position: center top;
-    }
-
     .hero-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -442,6 +424,40 @@
     .section-header p {
       color: var(--text-muted);
       font-size: 1.05rem;
+    }
+
+    .benefits .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .benefits .section-header h2 {
+      margin-bottom: 0;
+    }
+
+    .benefits-photo {
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+
+    .benefits-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .benefits-intro {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto 3rem;
     }
 
     .benefits-grid {
