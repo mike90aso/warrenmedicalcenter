@@ -8,832 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@600;700;800&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #0274BE;
-      --blue-dark: #015a96;
-      --blue-light: #e8f4fc;
-      --red: #ed1a1f;
-      --dark: #222222;
-      --text: #444444;
-      --text-muted: #666666;
-      --gray-50: #f7f8fa;
-      --gray-100: #eef0f3;
-      --gray-200: #e2e5ea;
-      --gray-300: #d0d4da;
-      --white: #ffffff;
-      --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-      --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
-      --radius: 12px;
-      --max-width: 1140px;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--text);
-      line-height: 1.65;
-      background: var(--gray-100);
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Raleway', sans-serif;
-      color: var(--dark);
-      line-height: 1.25;
-    }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    a:hover {
-      color: var(--blue-dark);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* Top bar */
-    .top-bar {
-      background: var(--dark);
-      color: var(--white);
-      font-size: 0.875rem;
-      padding: 0.6rem 0;
-    }
-
-    .top-bar .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem 1.5rem;
-    }
-
-    .top-bar a {
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    .top-bar a:hover {
-      color: #8ed1fc;
-    }
-
-    .top-bar__item {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    /* Header */
-    .header {
-      background: var(--white);
-      border-bottom: 1px solid var(--gray-200);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav {
-      display: flex;
-      gap: 1.5rem;
-      flex: 1;
-      justify-content: center;
-    }
-
-    .nav a {
-      color: var(--text);
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .nav a:hover,
-    .nav a.is-active {
-      color: var(--blue);
-    }
-
-    .hero-dot-note {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      padding: 0.75rem 1rem;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 6px;
-      border: 1px solid var(--gray-200);
-      max-width: 520px;
-    }
-
-    .hero-dot-note a {
-      font-weight: 600;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      color: var(--dark);
-      text-decoration: none;
-    }
-
-    .logo:hover {
-      color: var(--dark);
-    }
-
-    .logo__mark {
-      width: 48px;
-      height: 48px;
-      background: var(--blue);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .logo__text {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      line-height: 1.2;
-    }
-
-    .logo__text span {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .header-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-primary {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--blue-dark);
-      color: var(--white);
-    }
-
-    .btn-red {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    .btn-red:hover {
-      background: #c91519;
-      color: var(--white);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--blue);
-      border: 2px solid var(--blue);
-    }
-
-    .btn-outline:hover {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 50%, var(--blue-light) 100%);
-      padding: 4rem 0 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(2, 116, 190, 0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--blue);
-      color: var(--white);
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.4rem 0.9rem;
-      border-radius: 4px;
-    }
-
-    .hero-price-badge {
-      display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      font-family: 'Raleway', sans-serif;
-      font-weight: 800;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.45rem 1rem;
-      border-radius: 4px;
-    }
-
-    .hero-price-callout {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.35rem;
-      background: var(--white);
-      border: 2px solid var(--red);
-      border-radius: 8px;
-      padding: 0.65rem 1.1rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .hero-price-callout__label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .hero-price-callout__amount {
-      font-family: 'Raleway', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--red);
-      line-height: 1;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 2.85rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 span {
-      color: var(--blue);
-    }
-
-    .hero-lead {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 1.75rem;
-      max-width: 520px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-    }
-
-    .hero-feature {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--dark);
-    }
-
-    .hero-feature svg {
-      flex-shrink: 0;
-      color: var(--blue);
-    }
-
-    .hero-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--gray-200);
-    }
-
-    .hero-card-price {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 0.5rem;
-      background: var(--red);
-      color: var(--white);
-      border-radius: 8px;
-      padding: 0.85rem 1.25rem;
-      margin-bottom: 1.25rem;
-      text-align: center;
-    }
-
-    .hero-card-price__label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      opacity: 0.9;
-    }
-
-    .hero-card-price__amount {
-      font-family: 'Raleway', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .hero-card h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 3px solid var(--blue);
-    }
-
-    .hours-list {
-      list-style: none;
-    }
-
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid var(--gray-200);
-      font-size: 0.95rem;
-    }
-
-    .hours-list li:last-child {
-      border-bottom: none;
-    }
-
-    .hours-list .day {
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .hours-list .closed {
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .hero-card-address {
-      margin-top: 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--gray-200);
-      font-size: 0.95rem;
-    }
-
-    .hero-card-address strong {
-      display: block;
-      color: var(--dark);
-      margin-bottom: 0.25rem;
-    }
-
-    /* Benefits */
-    .benefits {
-      padding: 4.5rem 0;
-      background: var(--gray-50);
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3rem;
-    }
-
-    .section-header h2 {
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-    }
-
-    .section-header p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .benefit-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      border: 1px solid var(--gray-200);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .benefit-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--blue-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.25rem;
-      color: var(--blue);
-    }
-
-    .benefit-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .benefit-card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* Expect / Insurance */
-    .expect {
-      padding: 4.5rem 0;
-      background: var(--gray-100);
-    }
-
-    .expect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .expect-content h2 {
-      font-size: clamp(1.75rem, 3vw, 2.1rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-
-    .expect-content > p {
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-    }
-
-    .check-list {
-      list-style: none;
-    }
-
-    .check-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.6rem 0;
-      font-size: 0.98rem;
-    }
-
-    .check-list svg {
-      flex-shrink: 0;
-      margin-top: 0.15rem;
-      color: var(--blue);
-    }
-
-    .expect-highlight {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      border-left: 4px solid var(--red);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .expect-highlight h3 {
-      font-family: 'Roboto Slab', serif;
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-      color: var(--red);
-    }
-
-    .expect-highlight p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .expect-highlight p:last-child {
-      margin-bottom: 0;
-    }
-
-    .insurance-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .insurance-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .insurance-list svg {
-      flex-shrink: 0;
-      color: var(--blue);
-    }
-
-    /* Scheduler */
-    .scheduler {
-      padding: 4.5rem 0 5rem;
-      background: var(--gray-50);
-    }
-
-    .scheduler-box {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--gray-200);
-    }
-
-    .scheduler-box h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .scheduler-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      font-size: 1.05rem;
-    }
-
-    .scheduler-iframe-wrap {
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-    }
-
-    .scheduler-iframe-wrap iframe {
-      display: block;
-      width: 100%;
-      min-height: 800px;
-      border: none;
-    }
-
-    /* Location */
-    .location {
-      padding: 4.5rem 0;
-      background: var(--gray-100);
-    }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: stretch;
-    }
-
-    .location-info {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      border: 1px solid var(--gray-200);
-    }
-
-    .location-info h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .location-detail {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .location-detail svg {
-      flex-shrink: 0;
-      color: var(--blue);
-      margin-top: 0.15rem;
-    }
-
-    .location-detail strong {
-      display: block;
-      color: var(--dark);
-      margin-bottom: 0.15rem;
-    }
-
-    .location-map {
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--gray-200);
-      min-height: 320px;
-    }
-
-    .location-map iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 320px;
-      border: none;
-      display: block;
-    }
-
-    /* CTA band */
-    .cta-band {
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
-      color: var(--white);
-      padding: 3.5rem 0;
-      text-align: center;
-    }
-
-    .cta-band h2 {
-      color: var(--white);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      margin-bottom: 0.75rem;
-    }
-
-    .cta-band p {
-      font-size: 1.1rem;
-      opacity: 0.92;
-      margin-bottom: 1.75rem;
-      max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-band .btn-red {
-      font-size: 1.05rem;
-      padding: 0.9rem 2rem;
-    }
-
-    /* Footer */
-    .footer {
-      background: var(--dark);
-      color: #aaa;
-      padding: 2.5rem 0;
-      font-size: 0.9rem;
-    }
-
-    .footer .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .footer a {
-      color: #ccc;
-    }
-
-    .footer a:hover {
-      color: var(--white);
-    }
-
-    .footer-brand {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 800;
-      color: var(--white);
-      font-size: 1.05rem;
-    }
-
-    .footer-brand span {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #8ed1fc;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero .container,
-      .expect-grid,
-      .location-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .benefits-grid {
-        grid-template-columns: 1fr;
-        max-width: 420px;
-        margin: 0 auto;
-      }
-
-      .hero {
-        padding: 2.5rem 0 3.5rem;
-      }
-
-      .header-cta .btn-outline {
-        display: none;
-      }
-
-      .nav {
-        display: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .hero-features,
-      .insurance-list {
-        grid-template-columns: 1fr;
-      }
-
-      .top-bar .container {
-        justify-content: center;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -861,9 +36,43 @@
           <span>DOT Physicals</span>
         </div>
       </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Primary Care</a>
-        <a href="dot-physicals.html" class="is-active">DOT Physicals</a>
+        <div class="nav-item has-dropdown">
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">
+            Primary Care <span class="nav-caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown" role="menu">
+            <ul class="nav-dropdown__grid">
+            <li><a href="index.html" class="nav-dropdown__overview">Primary Care Overview</a></li>
+            <li><a href="chronic-conditions.html">Chronic Conditions</a></li>
+            <li><a href="infections.html">Infections</a></li>
+            <li><a href="womens-health.html">Women’s Health</a></li>
+            <li><a href="mens-health.html">Men’s Health</a></li>
+            <li><a href="acute-illnesses.html">Acute Illnesses</a></li>
+            <li><a href="preventive-care.html">Preventive Care</a></li>
+            <li><a href="endocrine-disorders.html">Endocrine Disorders</a></li>
+            <li><a href="health-coaching.html">Health Coaching</a></li>
+            <li><a href="dermatological-conditions.html">Dermatological Conditions</a></li>
+            <li><a href="gastrointestinal-issues.html">Gastrointestinal Issues</a></li>
+            <li><a href="cardiovascular-health.html">Cardiovascular Health</a></li>
+            <li><a href="musculoskeletal-neurological.html">Musculoskeletal &amp; Neurological</a></li>
+            <li><a href="miscellaneous-conditions.html">Miscellaneous Conditions</a></li>
+            <li><a href="weight-loss-nutrition-stds-chronic-fatigue.html">Weight Loss, Nutrition, STDs, Chronic Fatigue</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="dot-physicals.html" class="is-active">DOT Physicals</a>
+        </div>
+        <div class="nav-item">
+          <a href="immigration-physicals.html">Immigration Physicals</a>
+        </div>
+        <div class="nav-item">
+          <a href="opioid-addiction.html">Opioid Addiction</a>
+        </div>
       </nav>
       <div class="header-cta">
         <a href="tel:3139458210" class="btn btn-outline">Call Now</a>
@@ -876,7 +85,6 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-badges">
-          <span class="hero-price-badge">Just $65</span>
           <span class="hero-badge">FMCSA Certified</span>
         </div>
         <div class="hero-price-callout" aria-label="DOT physical price">
@@ -884,7 +92,7 @@
           <span class="hero-price-callout__amount">$65</span>
         </div>
         <h1>Fast, Easy &amp; Affordable <span>DOT Physicals</span> — Just <span>$65</span></h1>
-        <p class="hero-lead">Get back on the road quickly with same-day DOT physical appointments for just $65. Our driver-friendly team at Warren Medical Center makes your FMCSA exam simple, efficient, and stress-free — no hidden fees.</p>
+        <p class="hero-lead">Get back on the road quickly with same-day DOT physical appointments for just $65. Our driver-friendly team at Warren Medical Center makes your FMCSA exam simple, efficient, and stress-free — with drug and alcohol testing available when needed.</p>
         <div class="hero-actions">
           <a href="#schedule" class="btn btn-primary">Schedule Online</a>
           <a href="tel:3139458210" class="btn btn-red">Call (313) 945-8210</a>
@@ -905,6 +113,10 @@
           <div class="hero-feature">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
             Just $65 — No Surprises
+          </div>
+          <div class="hero-feature">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Drug &amp; Alcohol Testing
           </div>
         </div>
       </div>
@@ -1000,6 +212,7 @@
         <div class="expect-highlight">
           <h3>Same-Day Appointments — Just $65</h3>
           <p>Need your DOT card today? We offer same-day scheduling whenever slots are open — perfect for drivers in the Dearborn area or passing through Metro Detroit. Every DOT physical is just <strong>$65</strong>.</p>
+          <p>We also offer <strong>drug and alcohol testing</strong> to support employer and FMCSA-related requirements. Ask our team when you book so we can prepare for your visit.</p>
           <p>Book online below or call <a href="tel:3139458210"><strong>(313) 945-8210</strong></a> to check availability. Walk-ins welcome when time permits.</p>
         </div>
       </div>
@@ -1077,11 +290,12 @@
         <span>DOT Physicals</span>
       </div>
       <p>12940 W Warren Ave, Dearborn, MI 48126 &nbsp;|&nbsp; <a href="tel:3139458210">(313) 945-8210</a></p>
-      <p><a href="index.html">Primary Care</a> &nbsp;|&nbsp; <a href="dot-physicals.html">DOT Physicals</a></p>
+      <p><a href="index.html">Primary Care</a> &nbsp;|&nbsp; <a href="dot-physicals.html">DOT Physicals</a> &nbsp;|&nbsp; <a href="immigration-physicals.html">Immigration Physicals</a> &nbsp;|&nbsp; <a href="opioid-addiction.html">Opioid Addiction</a></p>
       <p>&copy; 2026 Warren Medical Center. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
